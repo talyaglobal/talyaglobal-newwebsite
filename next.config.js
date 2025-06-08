@@ -26,9 +26,6 @@ const nextConfig = {
   // Configure the build output directory
   distDir: '.next',
   
-  // Enable React's new JSX transform
-  swcMinify: true,
-  
   // Webpack configuration
   webpack: (config, { isServer }) => {
     // Configure path aliases
@@ -61,12 +58,6 @@ const nextConfig = {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
-  },
-
-  // Internationalization configuration
-  i18n: {
-    locales: ['en'],
-    defaultLocale: 'en',
   },
 
   // Security headers
