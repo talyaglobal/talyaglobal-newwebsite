@@ -1,5 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { companyService } from '@/app/services/services'
+import { companyService } from '@/app/services/companyService'
+
+// Mark this route as static
+export const dynamic = 'force-static'
+
+// Disable static params checking
+export const dynamicParams = true
 
 export async function GET(
   request: NextRequest,
