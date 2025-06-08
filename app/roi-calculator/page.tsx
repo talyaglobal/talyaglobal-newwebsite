@@ -1,4 +1,4 @@
-import { Navigation } from '../components/Navigation'
+import { Navigation } from '@/components/Navigation'
 import { ROICalculatorPage } from './ROICalculatorPage'
 
 export default function ROICalculator() {

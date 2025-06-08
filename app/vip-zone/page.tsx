@@ -1,4 +1,4 @@
-import { Navigation } from '../components/Navigation'
+import { Navigation } from '@/components/Navigation'
 import { VIPZonePage } from './VIPZonePage'
 
 export default function VIPZone() {
