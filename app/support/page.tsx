@@ -1,5 +1,4 @@
 import { Navigation } from '../components/Navigation'
-import { Footer } from '../components/Footer'
 import { SupportPage } from './SupportPage'
 
 export default function Support() {
@@ -7,7 +6,6 @@ export default function Support() {
     <main className="min-h-screen">
       <Navigation />
       <SupportPage />
-      <Footer />
     </main>
   )
 }
