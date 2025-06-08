@@ -1,4 +1,4 @@
-import Navigation from '../../src/components/Navigation'
+import { Navigation } from '@/components/Navigation'
 import Footer from '../../src/components/Footer'
 import FeaturedInvestments from '../../src/components/FeaturedInvestments'
 

@@ -4,6 +4,16 @@ import { companyService } from '@/app/services/companyService'
 // Mark this route as static
 export const dynamic = 'force-static'
 
+// Generate static params for all company IDs
+export function generateStaticParams() {
+  return [
+    { id: '1' },
+    { id: '2' },
+    { id: '3' },
+    // Add more company IDs as needed
+  ]
+}
+
 // Mock data for static export
 const MOCK_COMPANIES = [
   {
