@@ -18,10 +18,37 @@ const nextConfig = {
   },
 
   // Enable static exports for static site generation
-  output: 'export',
+  output: process.env.NODE_ENV === 'production' ? 'export' : undefined,
   
   // Add a trailing slash for static exports
   trailingSlash: true,
+  
+  // Skip API routes during export
+  skipTrailingSlashRedirect: true,
+  
+  // Disable API routes during export
+  exportPathMap: async function() {
+    return {
+      '/': { page: '/' },
+      '/about': { page: '/about' },
+      '/portfolio': { page: '/portfolio' },
+      '/investments': { page: '/investments' },
+      '/services': { page: '/services' },
+      '/team': { page: '/team' },
+      '/contact': { page: '/contact' },
+      '/privacy': { page: '/privacy' },
+      '/terms': { page: '/terms' },
+      '/vip-login': { page: '/vip-login' },
+      '/roi-calculator': { page: '/roi-calculator' },
+      '/support': { page: '/support' },
+      '/venture-ai-studio': { page: '/venture-ai-studio' },
+      '/vip-zone': { page: '/vip-zone' },
+      '/news': { page: '/news' },
+      '/careers': { page: '/careers' },
+      '/resources': { page: '/resources' },
+      '/insights': { page: '/insights' },
+    };
+  },
   
   // Configure the build output directory
   distDir: '.next',

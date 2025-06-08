@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const StatsSection = () => {
+const StatsSection = () => {
   const stats = [
     { name: 'Projects Completed', value: '1000+' },
     { name: 'Happy Clients', value: '500+' },

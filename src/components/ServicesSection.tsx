@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const ServicesSection = () => {
+const ServicesSection = () => {
   const services = [
     {
       name: 'Investment Management',
