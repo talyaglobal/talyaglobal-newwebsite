@@ -1,12 +1,12 @@
-import { Navigation } from '@/components/Navigation'
-import { Hero } from '@/components/Hero'
-import { FeaturedInvestments } from '@/components/FeaturedInvestments'
-import { AboutSection } from '@/components/AboutSection'
-import { PortfolioSection } from '@/components/PortfolioSection'
-import { ServicesSection } from '@/components/ServicesSection'
-import { StatsSection } from '@/components/StatsSection'
-import { ContactSection } from '@/components/ContactSection'
-import Footer from '@/components/Footer'
+import Navigation from '../src/components/Navigation'
+import Hero from '../src/components/Hero'
+import FeaturedInvestments from '../src/components/FeaturedInvestments'
+import AboutSection from '../src/components/AboutSection'
+import PortfolioSection from '../src/components/PortfolioSection'
+import ServicesSection from '../src/components/ServicesSection'
+import StatsSection from '../src/components/StatsSection'
+import ContactSection from '../src/components/ContactSection'
+import Footer from '../src/components/Footer'
 
 export default function HomePage() {
   return (

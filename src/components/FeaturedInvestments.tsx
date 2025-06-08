@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const FeaturedInvestments = () => {
+const FeaturedInvestments = () => {
   const investments = [
     {
       id: 1,

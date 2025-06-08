@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const PortfolioSection = () => {
+const PortfolioSection = () => {
   const portfolioItems = [
     {
       id: 1,
