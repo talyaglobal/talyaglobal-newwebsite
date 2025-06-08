@@ -1,7 +1,7 @@
 import { Navigation } from '@/components/Navigation'
 import Footer from '@/components/Footer'
-import { PortfolioSection } from '../components/PortfolioSection'
-import { StatsSection } from '../components/StatsSection'
+import { PortfolioSection } from '@/components/PortfolioSection'
+import { StatsSection } from '@/components/StatsSection'
 
 export default function PortfolioPage() {
   return (

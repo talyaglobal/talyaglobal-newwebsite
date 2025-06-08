@@ -17,11 +17,12 @@ import {
   Eye,
   Share2,
   BookOpen,
-  ChevronRight
+  ChevronRight,
+  Mail
 } from 'lucide-react'
-import { Button } from '../components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
-import { Input } from '../components/ui/input'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
 
 export function NewsPage() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -125,7 +126,18 @@ export function NewsPage() {
   const featuredArticle = newsArticles.find(article => article.featured)
   const recentArticles = newsArticles.filter(article => !article.featured).slice(0, 5)
 
-  const getCategoryIcon = (category) => {
+  const getCategoryColor = (category: string): string => {
+    switch (category) {
+      case 'Investment': return 'text-orange-500'
+      case 'Portfolio Update': return 'text-blue-500'
+      case 'Company News': return 'text-green-500'
+      case 'Market Insights': return 'text-purple-500'
+      case 'Technology': return 'text-red-500'
+      default: return 'text-gray-500'
+    }
+  }
+
+  const getCategoryIcon = (category: string) => {
     switch (category) {
       case 'Investment': return TrendingUp
       case 'Portfolio Update': return Building2
@@ -136,7 +148,7 @@ export function NewsPage() {
     }
   }
 
-  const formatDate = (dateString) => {
+  const formatDate = (dateString: string): string => {
     const date = new Date(dateString)
     return date.toLocaleDateString('en-US', { 
       year: 'numeric', 

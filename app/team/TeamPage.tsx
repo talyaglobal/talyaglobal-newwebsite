@@ -16,11 +16,11 @@ import {
   ChevronDown,
   ChevronUp
 } from 'lucide-react'
-import { Button } from '../components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 export function TeamPage() {
-  const [expandedBio, setExpandedBio] = useState(null)
+  const [expandedBio, setExpandedBio] = useState<number | null>(null)
 
   const leadership = [
     {
@@ -167,7 +167,7 @@ export function TeamPage() {
     }
   ]
 
-  const toggleBio = (index) => {
+  const toggleBio = (index: number) => {
     setExpandedBio(expandedBio === index ? null : index)
   }
 

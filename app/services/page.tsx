@@ -1,7 +1,7 @@
-import { Navigation } from '../components/Navigation'
-import { Footer } from '../components/Footer'
-import { ServicesOverview } from '../components/ServicesOverview'
-import { TrustCredibility } from '../components/TrustCredibility'
+import Navigation from '../../src/components/Navigation'
+import Footer from '../../src/components/Footer'
+import ServicesOverview from '../../src/components/ServicesOverview'
+import TrustCredibility from '../../src/components/TrustCredibility'
 
 export default function ServicesPage() {
   return (

@@ -1,6 +1,6 @@
 import { Navigation } from '@/components/Navigation'
 import Footer from '@/components/Footer'
-import { FeaturedInvestments } from '../components/FeaturedInvestments'
+import { FeaturedInvestments } from '@/components/FeaturedInvestments'
 
 export default function InvestmentsPage() {
   return (
