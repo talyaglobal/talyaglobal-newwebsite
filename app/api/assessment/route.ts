@@ -3,7 +3,6 @@ import { companyService } from '@/app/services/companyService'
 
 // Mark this route as static
 export const dynamic = 'force-static'
-export const dynamicParams = true
 
 // Mock types for static export
 interface Company {
@@ -118,9 +117,24 @@ export async function POST(request: Request) {
 
 // Simple GET endpoint for static export compatibility
 export async function GET() {
+  // Return mock assessment data in static export mode
+  const mockAssessment = {
+    id: 'mock-assessment-1',
+    companyId: '1',
+    score: 75,
+    recommendations: [
+      'Optimize digital marketing strategy',
+      'Improve customer acquisition cost',
+      'Enhance customer retention programs'
+    ],
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString()
+  }
+  
   return NextResponse.json({
     success: true,
-    message: 'Assessment API is running in static export mode',
-    data: []
+    data: mockAssessment,
+    message: 'Assessment data (mocked)',
+    staticExport: true
   })
 }

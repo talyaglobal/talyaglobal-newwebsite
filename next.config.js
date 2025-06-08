@@ -26,6 +26,24 @@ const nextConfig = {
   // Skip API routes during export
   skipTrailingSlashRedirect: true,
   
+  // Disable image optimization for static export
+  images: {
+    ...(process.env.NODE_ENV === 'production' && {
+      unoptimized: true,
+    }),
+    domains: [
+      'images.unsplash.com',
+      'tailwindui.com',
+      'images.ctfassets.net',
+      'via.placeholder.com',
+    ],
+  },
+  
+  // Disable server components for static export
+  experimental: {
+    serverActions: false,
+  },
+  
   // Disable server components external packages
   experimental: {
     serverComponentsExternalPackages: [],

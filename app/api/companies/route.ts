@@ -3,7 +3,6 @@ import { companyService } from '@/app/services/companyService'
 
 // Mark this route as static
 export const dynamic = 'force-static'
-export const dynamicParams = true
 
 // Mock data for static export
 const MOCK_COMPANIES = [
@@ -57,8 +56,8 @@ export async function GET(request: NextRequest) {
     const offset = searchParams.get('offset')
     const search = searchParams.get('search')
 
-    // In static export mode, return mock data
-    if (process.env.NEXT_PHASE === 'phase-export') {
+    // In static export mode or when not in server context, return mock data
+    if (process.env.NEXT_PHASE === 'phase-export' || typeof window === 'undefined') {
       let filteredCompanies = [...MOCK_COMPANIES]
       
       if (search) {

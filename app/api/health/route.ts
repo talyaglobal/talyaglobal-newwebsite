@@ -3,7 +3,6 @@ import { envConfig } from '@/lib/config'
 
 // Mark this route as static
 export const dynamic = 'force-static'
-export const dynamicParams = true
 
 // Simple health check endpoint for static exports
 export async function GET() {
