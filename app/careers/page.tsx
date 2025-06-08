@@ -1,4 +1,4 @@
-import { Navigation } from '@/components/Navigation'
+import { Navigation } from '../components/Navigation'
 import Footer from '../../src/components/Footer'
 import CareersPage from './CareersPage'
 

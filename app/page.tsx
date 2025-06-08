@@ -1,4 +1,4 @@
-import { Navigation } from '@/components/Navigation'
+import { Navigation } from '../components/Navigation'
 import Hero from '../src/components/Hero'
 import FeaturedInvestments from '../src/components/FeaturedInvestments'
 import AboutSection from '../src/components/AboutSection'
