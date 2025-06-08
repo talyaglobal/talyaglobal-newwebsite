@@ -1,4 +1,4 @@
-// File: /home/project/app/venture-ai-studio/page.tsx
+// File: /Users/askinguzel/Documents/dev/talyaglobal-newwebsite/app/venture-ai-studio/page.tsx
 import * as entry from '../../../../app/venture-ai-studio/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

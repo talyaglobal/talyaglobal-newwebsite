@@ -1,4 +1,4 @@
-// File: /home/project/app/vip-zone/page.tsx
+// File: /Users/askinguzel/Documents/dev/talyaglobal-newwebsite/app/vip-zone/page.tsx
 import * as entry from '../../../../app/vip-zone/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

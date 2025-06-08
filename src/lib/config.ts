@@ -10,6 +10,9 @@ export const config = {
   features: {
     enableAnalytics: process.env.NEXT_PUBLIC_ENABLE_ANALYTICS === 'true',
     maintenanceMode: process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true',
+    enableAiAssessment: process.env.NEXT_PUBLIC_ENABLE_AI_ASSESSMENT === 'true',
+    enableVipZone: process.env.NEXT_PUBLIC_ENABLE_VIP_ZONE === 'true',
+    enableChat: process.env.NEXT_PUBLIC_ENABLE_CHAT === 'true',
   },
   
   // Default settings
@@ -17,6 +20,21 @@ export const config = {
     theme: 'light',
     locale: 'en-US',
   },
+
+  // Environment configuration
+  env: {
+    nodeEnv: process.env.NODE_ENV || 'development',
+    isProduction: process.env.NODE_ENV === 'production',
+    isDevelopment: process.env.NODE_ENV === 'development',
+  },
 } as const;
+
+// Export as envConfig for backward compatibility
+export const envConfig = {
+  nodeEnv: config.env.nodeEnv,
+  enableAiAssessment: config.features.enableAiAssessment,
+  enableVipZone: config.features.enableVipZone,
+  enableChat: config.features.enableChat,
+};
 
 export default config;

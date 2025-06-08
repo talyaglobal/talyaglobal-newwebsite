@@ -1,6 +1,6 @@
-import { Navigation } from '@/components/Navigation'
-import Footer from '@/components/Footer'
-import { CareersPage } from './CareersPage'
+import Navigation from '../../src/components/Navigation'
+import Footer from '../../src/components/Footer'
+import CareersPage from './CareersPage'
 
 export default function Careers() {
   return (
