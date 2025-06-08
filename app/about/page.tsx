@@ -1,8 +1,8 @@
-import { Navigation } from '../components/Navigation'
-import { Footer } from '../components/Footer'
-import { AboutSection } from '../components/AboutSection'
-import { TrustCredibility } from '../components/TrustCredibility'
-import { StatsSection } from '../components/StatsSection'
+import { Navigation } from '@/components/Navigation'
+import Footer from '@/components/Footer'
+import { AboutSection } from '@/components/AboutSection'
+import { TrustCredibility } from '@/components/TrustCredibility'
+import { StatsSection } from '@/components/StatsSection'
 
 export default function AboutPage() {
   return (
