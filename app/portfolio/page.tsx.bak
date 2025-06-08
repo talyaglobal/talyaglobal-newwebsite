@@ -1,4 +1,4 @@
-import { Navigation } from './components/Navigation'
+import { Navigation } from '@/app/components/Navigation'
 import Footer from '../../src/components/Footer'
 import PortfolioSection from '../../src/components/PortfolioSection'
 import StatsSection from '../../src/components/StatsSection'

@@ -1,4 +1,4 @@
-import { Navigation } from '@/app/components/Navigation'
+import { Navigation } from '../components/Navigation'
 import Footer from '@/components/Footer'
 
 export default function PrivacyPage() {

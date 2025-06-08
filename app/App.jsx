@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navigation } from '@/app/components/Navigation'
+import { Navigation } from './components/Navigation'
 import { Footer } from './components/Footer'
 import { HomePage } from './pages/HomePage'
 

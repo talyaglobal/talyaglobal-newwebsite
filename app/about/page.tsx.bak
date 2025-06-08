@@ -1,4 +1,4 @@
-import { Navigation } from './components/Navigation'
+import { Navigation } from '@/app/components/Navigation'
 import Footer from '../../src/components/Footer'
 import AboutSection from '../../src/components/AboutSection'
 import TrustCredibility from '../../src/components/TrustCredibility'

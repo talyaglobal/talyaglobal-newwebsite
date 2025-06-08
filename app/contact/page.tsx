@@ -1,5 +1,5 @@
 import ContactSection from '../../src/components/ContactSection'
-import { Navigation } from '@/app/components/Navigation'
+import { Navigation } from '../components/Navigation'
 import Footer from '../../src/components/Footer'
 
 export default function ContactPage() {

@@ -1,4 +1,4 @@
-import { Navigation } from '@/app/components/Navigation'
+import { Navigation } from '../components/Navigation'
 import Footer from '@/components/Footer'
 import { TeamPage } from './TeamPage'
 
