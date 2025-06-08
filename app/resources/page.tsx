@@ -1,0 +1,13 @@
+import { Navigation } from '../components/Navigation'
+import { Footer } from '../components/Footer'
+import { ResourcesPage } from './ResourcesPage'
+
+export default function Resources() {
+  return (
+    <main className="min-h-screen">
+      <Navigation />
+      <ResourcesPage />
+      <Footer />
+    </main>
+  )
+}

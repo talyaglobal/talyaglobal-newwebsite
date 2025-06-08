@@ -1,0 +1,13 @@
+import { Navigation } from '../components/Navigation'
+import { Footer } from '../components/Footer'
+import { InsightsPage } from './InsightsPage'
+
+export default function Insights() {
+  return (
+    <main className="min-h-screen">
+      <Navigation />
+      <InsightsPage />
+      <Footer />
+    </main>
+  )
+}

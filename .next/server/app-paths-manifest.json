@@ -1,0 +1,8 @@
+{
+  "/page": "app/page.js",
+  "/about/page": "app/about/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/investments/page": "app/investments/page.js",
+  "/roi-calculator/page": "app/roi-calculator/page.js",
+  "/team/page": "app/team/page.js"
+}

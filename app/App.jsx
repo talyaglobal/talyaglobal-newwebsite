@@ -1,0 +1,19 @@
+import React from 'react'
+import { Navigation } from './components/Navigation'
+import { Footer } from './components/Footer'
+import { HomePage } from './pages/HomePage'
+
+function App() {
+  return (
+    <div className="min-h-screen bg-white">
+      <Navigation />
+      <main className="pt-16">
+        <HomePage />
+      </main>
+      <Footer />
+    </div>
+  )
+}
+
+export default App
+

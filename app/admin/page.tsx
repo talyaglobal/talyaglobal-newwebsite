@@ -1,0 +1,353 @@
+'use client'
+
+import { useState } from 'react'
+import { Navigation } from '../components/Navigation'
+import { Footer } from '../components/Footer'
+import { 
+  Users, 
+  Building2, 
+  BarChart3, 
+  Settings, 
+  Mail, 
+  FileText,
+  TrendingUp,
+  DollarSign,
+  Globe,
+  Shield,
+  Database,
+  Activity,
+  AlertCircle,
+  CheckCircle,
+  Clock,
+  Eye,
+  Edit,
+  Trash2,
+  Plus,
+  Download,
+  Filter,
+  Search
+} from 'lucide-react'
+import { Button } from '../components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
+import { Input } from '../components/ui/input'
+
+export default function AdminPage() {
+  const [activeTab, setActiveTab] = useState('dashboard')
+  const [searchTerm, setSearchTerm] = useState('')
+
+  const adminTabs = [
+    { id: 'dashboard', name: 'Dashboard', icon: BarChart3 },
+    { id: 'companies', name: 'Companies', icon: Building2 },
+    { id: 'assessments', name: 'Assessments', icon: FileText },
+    { id: 'users', name: 'Users', icon: Users },
+    { id: 'analytics', name: 'Analytics', icon: TrendingUp },
+    { id: 'settings', name: 'Settings', icon: Settings },
+  ]
+
+  const dashboardStats = [
+    { label: 'Total Companies', value: '1,247', change: '+12%', icon: Building2, color: 'text-blue-600' },
+    { label: 'Assessments Completed', value: '3,891', change: '+8%', icon: FileText, color: 'text-green-600' },
+    { label: 'Active Users', value: '892', change: '+15%', icon: Users, color: 'text-purple-600' },
+    { label: 'Total Portfolio Value', value: '$500M+', change: '+22%', icon: DollarSign, color: 'text-amber-600' },
+  ]
+
+  const recentAssessments = [
+    {
+      id: 1,
+      company: 'TechFlow Solutions',
+      industry: 'Technology',
+      valuation: '$2.3M',
+      status: 'completed',
+      date: '2024-12-15',
+      score: 85
+    },
+    {
+      id: 2,
+      company: 'GreenEnergy Corp',
+      industry: 'Energy',
+      valuation: '$5.7M',
+      status: 'pending',
+      date: '2024-12-14',
+      score: 78
+    },
+    {
+      id: 3,
+      company: 'DataDrive Analytics',
+      industry: 'Software',
+      valuation: '$1.8M',
+      status: 'completed',
+      date: '2024-12-13',
+      score: 92
+    },
+    {
+      id: 4,
+      company: 'MedTech Innovations',
+      industry: 'Healthcare',
+      valuation: '$4.2M',
+      status: 'in_review',
+      date: '2024-12-12',
+      score: 88
+    },
+  ]
+
+  const systemHealth = [
+    { service: 'Database', status: 'healthy', responseTime: '45ms' },
+    { service: 'AI Services', status: 'healthy', responseTime: '120ms' },
+    { service: 'Email Service', status: 'healthy', responseTime: '89ms' },
+    { service: 'External APIs', status: 'degraded', responseTime: '340ms' },
+  ]
+
+  const renderDashboard = () => (
+    <div className="space-y-8">
+      {/* Stats Grid */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {dashboardStats.map((stat, index) => {
+          const Icon = stat.icon
+          return (
+            <Card key={index} className="glass-card">
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm text-slate-600">{stat.label}</p>
+                    <p className="text-2xl font-bold text-slate-900">{stat.value}</p>
+                    <p className="text-sm text-green-600">{stat.change} from last month</p>
+                  </div>
+                  <Icon className={`w-8 h-8 ${stat.color}`} />
+                </div>
+              </CardContent>
+            </Card>
+          )
+        })}
+      </div>
+
+      {/* Recent Activity */}
+      <div className="grid lg:grid-cols-2 gap-8">
+        <Card className="glass-card">
+          <CardHeader>
+            <CardTitle className="flex items-center space-x-2">
+              <Activity className="w-5 h-5 text-purple-600" />
+              <span>Recent Assessments</span>
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              {recentAssessments.map((assessment) => (
+                <div key={assessment.id} className="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-slate-900">{assessment.company}</h4>
+                    <p className="text-sm text-slate-600">{assessment.industry} • {assessment.date}</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-semibold text-green-600">{assessment.valuation}</p>
+                    <div className="flex items-center space-x-2">
+                      <span className="text-sm text-slate-600">Score: {assessment.score}</span>
+                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                        assessment.status === 'completed' ? 'bg-green-100 text-green-700' :
+                        assessment.status === 'pending' ? 'bg-yellow-100 text-yellow-700' :
+                        'bg-blue-100 text-blue-700'
+                      }`}>
+                        {assessment.status.replace('_', ' ')}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="glass-card">
+          <CardHeader>
+            <CardTitle className="flex items-center space-x-2">
+              <Shield className="w-5 h-5 text-green-600" />
+              <span>System Health</span>
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              {systemHealth.map((service, index) => (
+                <div key={index} className="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
+                  <div className="flex items-center space-x-3">
+                    <div className={`w-3 h-3 rounded-full ${
+                      service.status === 'healthy' ? 'bg-green-500' :
+                      service.status === 'degraded' ? 'bg-yellow-500' :
+                      'bg-red-500'
+                    }`}></div>
+                    <span className="font-medium text-slate-900">{service.service}</span>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-sm text-slate-600">{service.responseTime}</p>
+                    <p className={`text-xs font-medium ${
+                      service.status === 'healthy' ? 'text-green-600' :
+                      service.status === 'degraded' ? 'text-yellow-600' :
+                      'text-red-600'
+                    }`}>
+                      {service.status}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  )
+
+  const renderCompanies = () => (
+    <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <h2 className="text-2xl font-bold text-slate-900">Companies</h2>
+        <Button className="flex items-center space-x-2">
+          <Plus className="w-4 h-4" />
+          <span>Add Company</span>
+        </Button>
+      </div>
+
+      <div className="flex items-center space-x-4">
+        <div className="relative flex-1">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-slate-400" />
+          <Input
+            placeholder="Search companies..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="pl-10"
+          />
+        </div>
+        <Button variant="outline" className="flex items-center space-x-2">
+          <Filter className="w-4 h-4" />
+          <span>Filter</span>
+        </Button>
+        <Button variant="outline" className="flex items-center space-x-2">
+          <Download className="w-4 h-4" />
+          <span>Export</span>
+        </Button>
+      </div>
+
+      <Card className="glass-card">
+        <CardContent className="p-0">
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead className="bg-slate-50">
+                <tr>
+                  <th className="text-left p-4 font-semibold text-slate-900">Company</th>
+                  <th className="text-left p-4 font-semibold text-slate-900">Industry</th>
+                  <th className="text-left p-4 font-semibold text-slate-900">Stage</th>
+                  <th className="text-left p-4 font-semibold text-slate-900">Revenue</th>
+                  <th className="text-left p-4 font-semibold text-slate-900">Last Assessment</th>
+                  <th className="text-left p-4 font-semibold text-slate-900">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {recentAssessments.map((company, index) => (
+                  <tr key={index} className="border-t border-slate-200">
+                    <td className="p-4">
+                      <div>
+                        <p className="font-medium text-slate-900">{company.company}</p>
+                        <p className="text-sm text-slate-600">ID: {company.id}</p>
+                      </div>
+                    </td>
+                    <td className="p-4 text-slate-600">{company.industry}</td>
+                    <td className="p-4">
+                      <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
+                        Growth
+                      </span>
+                    </td>
+                    <td className="p-4 font-medium text-slate-900">{company.valuation}</td>
+                    <td className="p-4 text-slate-600">{company.date}</td>
+                    <td className="p-4">
+                      <div className="flex items-center space-x-2">
+                        <Button size="sm" variant="outline">
+                          <Eye className="w-4 h-4" />
+                        </Button>
+                        <Button size="sm" variant="outline">
+                          <Edit className="w-4 h-4" />
+                        </Button>
+                        <Button size="sm" variant="outline">
+                          <Trash2 className="w-4 h-4" />
+                        </Button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  )
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case 'dashboard':
+        return renderDashboard()
+      case 'companies':
+        return renderCompanies()
+      case 'assessments':
+        return <div className="text-center py-12 text-slate-600">Assessments management coming soon...</div>
+      case 'users':
+        return <div className="text-center py-12 text-slate-600">User management coming soon...</div>
+      case 'analytics':
+        return <div className="text-center py-12 text-slate-600">Advanced analytics coming soon...</div>
+      case 'settings':
+        return <div className="text-center py-12 text-slate-600">System settings coming soon...</div>
+      default:
+        return renderDashboard()
+    }
+  }
+
+  return (
+    <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50/30">
+      <Navigation />
+      <div className="pt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          {/* Header */}
+          <div className="mb-8">
+            <h1 className="text-4xl font-serif font-bold text-slate-900 mb-2">
+              Admin Portal
+            </h1>
+            <p className="text-slate-600">
+              Manage companies, assessments, and system operations
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-5 gap-8">
+            {/* Sidebar */}
+            <div className="lg:col-span-1">
+              <Card className="glass-card">
+                <CardContent className="p-4">
+                  <nav className="space-y-2">
+                    {adminTabs.map((tab) => {
+                      const Icon = tab.icon
+                      return (
+                        <button
+                          key={tab.id}
+                          onClick={() => setActiveTab(tab.id)}
+                          className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-200 ${
+                            activeTab === tab.id
+                              ? 'bg-purple-600 text-white'
+                              : 'text-slate-600 hover:bg-purple-50 hover:text-purple-600'
+                          }`}
+                        >
+                          <Icon className="w-5 h-5" />
+                          <span className="font-medium">{tab.name}</span>
+                        </button>
+                      )
+                    })}
+                  </nav>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Main Content */}
+            <div className="lg:col-span-4">
+              {renderContent()}
+            </div>
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </main>
+  )
+}
