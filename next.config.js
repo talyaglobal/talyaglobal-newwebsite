@@ -44,10 +44,8 @@ const nextConfig = {
     serverActions: false,
   },
   
-  // Disable server components external packages
-  experimental: {
-    serverComponentsExternalPackages: [],
-  },
+  // Server external packages configuration
+  serverExternalPackages: [],
   
   // Disable server components
   compiler: {
