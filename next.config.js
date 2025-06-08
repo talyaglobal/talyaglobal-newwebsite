@@ -41,7 +41,9 @@ const nextConfig = {
   
   // Disable server components for static export
   experimental: {
-    serverActions: false,
+    serverActions: {
+      enabled: false
+    },
   },
   
   // Server external packages configuration
