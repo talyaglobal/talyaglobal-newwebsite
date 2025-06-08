@@ -1,5 +1,5 @@
-import { Navigation } from '../components/Navigation'
-import { Footer } from '../components/Footer'
+import { Navigation } from '@/components/Navigation'
+import Footer from '@/components/Footer'
 import { OurJourneyPage } from './OurJourneyPage'
 
 export default function OurJourney() {
